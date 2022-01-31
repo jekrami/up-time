@@ -19,9 +19,13 @@ alan=`date '+%Y-%m-%d_%H-%M-%S'`;
 
 filename="$alan[$i].log"
 
+<<<<<<< HEAD
 // fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
 
 fping -agsq 192.168.$i.0/24 > logs/$filename ;
+=======
+fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
+>>>>>>> 7986aa3273e29dc6cca8c021afe39cc55965dc7d
 
 cp logs/$filename last[$i].log
 
@@ -36,16 +40,16 @@ Then I put the code in a scheduled task for every 15 minutes.
 
 - I noticed that MRTG needs four values to draw a chart:
 
-- first value to draw first line ( fro example download value)
+- first value to draw first line ( for example download value)
 
--second value to draw second line (in another color) for example Upload value
+- second value to draw second line (in another color) for example Upload value
 
--3’rd is first value legend
+- 3’rd is first value legend
 
--4’th is second value legend
+- 4’th is second value legend
 
 
-- getlast.sh counts the ping-able devices and return results :
+-getlast.sh counts the ping-able devices and return results :
 
 
 #!/bin/bash
