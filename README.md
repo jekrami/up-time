@@ -19,7 +19,7 @@ alan=`date '+%Y-%m-%d_%H-%M-%S'`;
 
 filename="$alan[$i].log"
 
-# fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
+// fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
 
 fping -agsq 192.168.$i.0/24 > logs/$filename ;
 
