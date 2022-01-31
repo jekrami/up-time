@@ -19,13 +19,7 @@ alan=`date '+%Y-%m-%d_%H-%M-%S'`;
 
 filename="$alan[$i].log"
 
-<<<<<<< HEAD
-// fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
-
-fping -agsq 192.168.$i.0/24 > logs/$filename ;
-=======
 fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
->>>>>>> 7986aa3273e29dc6cca8c021afe39cc55965dc7d
 
 cp logs/$filename last[$i].log
 
