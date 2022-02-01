@@ -124,6 +124,8 @@ Include: /etc/mrtg/p122.cfg
 Include: /etc/mrtg/p180.cfg
 ```
 
+![img](https://github.com/jekrami/up-time/blob/main/sample.jpg)
+
 
 -The results are very simple but also very useful. Who can leave the pc “ON” after work hours!!:)
 
