@@ -81,19 +81,19 @@ YLegend[p100]: Count
 Legend1[p100]: Range 100
 
 Legend2[p100]: **
+```
 
-
--as you know mrtg can runs in a scheduled command like this:
+as you know mrtg can runs in a scheduled command like this:
 
 
 */5 * * * * env LANG=C /usr/bin/mrtg /etc/mrtg/p100.cfg
 
 
--I did this for all vlans and put them in this way:
+I did this for all vlans and put them in this way:
 
-each vlan in a single cfg file and run mrtg with a single mrtg.cfg file as follows:
+- each vlan in a single cfg file and run mrtg with a single mrtg.cfg file as follows:
 
-
+```
 WorkDir: /var/www/html/mrtg
 
 Options[_]: growright, pngdate, gauge, nopercent
