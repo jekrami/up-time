@@ -8,7 +8,7 @@ I did this in a multi vlan network as well as flat network and code works there 
 
 - First I needed to “SEE” my devices and I used ping to get values but it took too much time to ping a range (in multi vlan 10’s of ranges) I tested and found fping more practical , so I wrote this simple commands :
 
-
+```
 #!bin/bash
 
 for i in 100 {121..129} 131 140 151
@@ -24,7 +24,7 @@ fping -agsq 192.168.$i.0/24 -r 0 > logs/$filename ;
 cp logs/$filename last[$i].log
 
 done
-
+```
 
 The -r 0 option in slow devices causes me to not get a response in time , but make commands very fast. I removed it for having all pingable devices, losing some seconds.
 
@@ -45,7 +45,7 @@ Then I put the code in a scheduled task for every 15 minutes.
 
 -getlast.sh counts the ping-able devices and return results :
 
-
+```
 #!/bin/bash
 
 
@@ -56,14 +56,14 @@ echo "0"
 echo "$1"
 
 echo "$2"
-
+```
 
 - and run these code with another scheduled command but not in shell , in MRTG cfg file:
 
 
 In my example p100.cfg is for 100 vlan, that is used as an example for Servers:
 
-
+```
 Title[p100]: Servers
 
 PageTop[p100]: <H1>Servers</H1>
@@ -122,7 +122,7 @@ Include: /etc/mrtg/p122.cfg
 
 
 Include: /etc/mrtg/p180.cfg
-
+```
 
 
 -The results are very simple but also very useful. Who can leave the pc “ON” after work hours!!:)
