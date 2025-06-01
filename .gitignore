@@ -1,0 +1,41 @@
+# Environment variables
+config/.env
+.env
+
+# Logs
+logs/
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Poetry
+.venv/
+poetry.lock
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Data files (example, uncomment if needed)
+# trading_system/data/trading_system.db
+# trading_system/data/*.csv
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Test reports & coverage
+htmlcov/
+.pytest_cache/
+.coverage*
+nosetests.xml
+coverage.xml
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+*.egg
