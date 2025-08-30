@@ -49,7 +49,7 @@ T...another_address...,9876.5432
 
 ## How it works
 
-The script uses the `rocksdict` library to read the RocksDB database. It specifically looks for a column family named `account`, which is where Tron stores its account data.
+The script uses the `rocksdict` library to read the RocksDB database. It checks for a column family named `account`, and if that is not found, it falls back to `default`. This is because the name of the column family containing account data can vary between different Tron node setups.
 
 The values in the `account` column family are serialized using Google Protocol Buffers (Protobuf). The script uses the `.proto` files from the `java-tron` repository to generate Python classes that can parse this data.
 

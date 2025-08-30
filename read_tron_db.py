@@ -17,17 +17,24 @@ def main():
         return
 
     try:
-        # Get the 'account' column family. This is a common name for the account data.
-        # If this fails, you may need to list the column families and find the correct one.
         cf_names = rocksdict.Rdict.list_cf(args.db_path)
-        if 'account' not in cf_names:
-            print("Error: 'account' column family not found.")
+
+        account_cf_name = None
+        if 'account' in cf_names:
+            account_cf_name = 'account'
+        elif 'default' in cf_names:
+            account_cf_name = 'default'
+        else:
+            print("Error: Could not find 'account' or 'default' column family.")
             print(f"Available column families: {cf_names}")
+            db.close()
             return
 
-        account_cf = db.get_column_family('account')
+        account_cf = db.get_column_family(account_cf_name)
+        print(f"Using column family: '{account_cf_name}'")
+
     except Exception as e:
-        print(f"Error accessing 'account' column family: {e}")
+        print(f"Error accessing column family: {e}")
         db.close()
         return
 
