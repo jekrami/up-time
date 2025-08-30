@@ -47,10 +47,9 @@ def main():
             account = Account()
             account.ParseFromString(value)
 
-            # The address is the key, let's encode it in base58.
-            # Tron addresses have a prefix of 0x41.
-            address_hex = b'\x41' + key
-            address_b58 = base58.b58encode_check(address_hex).decode('utf-8')
+            # The key from the database is the full 21-byte address.
+            # We can directly encode it using base58check.
+            address_b58 = base58.b58encode_check(key).decode('utf-8')
 
             # The balance is in SUN (1 TRX = 1,000,000 SUN).
             balance_sun = account.balance
